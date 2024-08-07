@@ -29,7 +29,46 @@ docker build -t loadbalancer:latest .
 ```sh
 docker run -d -p 8000:8000 loadbalancer:latest
 ```
-Application Configuration
+### Using Docker Compose
+Docker Compose can be used to set up and run the load balancer along with your backend services.
+
+Create a docker-compose.yml file
+```yaml
+version: '3.8'
+
+services:
+  loadbalancer:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - app1
+      - app2
+      - app3
+
+  app1:
+    image: your-app1-image
+    expose:
+      - "80"
+
+  app2:
+    image: your-app2-image
+    expose:
+      - "80"
+
+  app3:
+    image: your-app3-image
+    expose:
+      - "80"
+```
+Replace your-app1-image, your-app2-image, and your-app3-image with the actual images of your backend services.
+
+Run Docker Compose
+```sh
+docker-compose up --build
+```
+This command will build the Docker image for the load balancer and start all the defined services.
+### Application Configuration
 The load balancer forwards requests to the following backend services by default:
 
 - https://www.google.com
