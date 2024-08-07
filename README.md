@@ -17,8 +17,8 @@ This repository contains a Go-based load balancer application that distributes t
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+https://github.com/jyothiram266/go-load-balancer.git
+cd go-load-balancer
 ```
 ### Build and Run the Application with Docker
 ###### Build the Docker image
