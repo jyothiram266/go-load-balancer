@@ -32,9 +32,9 @@ docker run -d -p 8000:8000 loadbalancer:latest
 Application Configuration
 The load balancer forwards requests to the following backend services by default:
 
-https://www.google.com
-https://www.facebook.com
-https://www.duckduckgo.com
+- https://www.google.com
+- https://www.facebook.com
+- https://www.duckduckgo.com
 You can modify the backend services in the main.go file:
 
 ```go
@@ -54,5 +54,5 @@ The main components of the application are:
 
 Access the load balancer at http://localhost:8000. The load balancer will forward requests to one of the backend services.
 
-Contributing
+### Contributing
 Contributions are welcome! Please submit a pull request or open an issue to discuss improvements or fixes.
